@@ -1,0 +1,33 @@
+type Mutation {
+    addTodo(
+        id: ID!,
+        name: String,
+        description: String,
+        priority: Int
+    ): Todo
+    createContent(content: String!): Content
+}
+
+type Query {
+    getTodos: [Todo]
+    helloworld(name: String!): String
+    listContents: [Content]
+    getContent(id: ID!): Content
+}
+
+type Todo {
+    id: ID!
+    name: String
+    description: String
+    priority: Int
+}
+
+type Content {
+    id: ID
+    content: String
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
